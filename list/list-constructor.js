@@ -4,10 +4,22 @@ function List() {
   this.length = 0;
   this.data = {};
 }
+
+List.prototype.shift = function() {
+  let returnValue = this.data[0];
+  delete this.data[0];
+  this.length--;
+  console.log(List.data);
+  return returnValue;
+};
+
+List.prototype.unshift = function() {};
+
 /**
  * Add item to the end of the list
  * @param item
- */
+ **/
+
 List.prototype.push = function(item) {
   this.data[this.length] = item;
   this.length++;
