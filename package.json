@@ -2,7 +2,7 @@
   "name": "lab02-classes-inheritance-functional-programming",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./objects/index.js",
   "scripts": {
     "start": "node .",
     "lint": "eslint **/*.js",
