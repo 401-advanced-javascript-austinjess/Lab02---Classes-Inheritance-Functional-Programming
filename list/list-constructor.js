@@ -8,7 +8,7 @@ function List() {
 List.prototype.forEach = function(callback) {
   if (callback && typeof callback === 'function') {
     for (let i = 0; i < this.length; i++) {
-      callback(this[i], i, this);
+      callback(this.data[i], i, this);
     }
   }
 };
