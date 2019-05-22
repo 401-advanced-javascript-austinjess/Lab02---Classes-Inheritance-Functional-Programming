@@ -5,15 +5,40 @@ function List() {
   this.data = {};
 }
 
+List.prototype.forEach = function(callback) {
+  if (callback && typeof callback === 'function') {
+    for (let i = 0; i < this.length; i++) {
+      callback(this[i], i, this);
+    }
+  }
+};
+
 List.prototype.shift = function() {
   let returnValue = this.data[0];
   delete this.data[0];
   this.length--;
-  console.log(List.data);
   return returnValue;
 };
 
-List.prototype.unshift = function() {};
+List.prototype.unshift = function() {
+  const startingLength = this.length;
+  console.log(startingLength);
+  const lengthIncrease = arguments.length;
+  let temp = {};
+  for (let i = 0; i < startingLength; i++) {
+    temp[i] = this.data[i];
+  }
+  console.log(temp);
+  for (let i = 0; i < lengthIncrease; i++) {
+    this.data[i] = arguments[i];
+    this.length++;
+  }
+  for (let i = 0; i < startingLength + lengthIncrease; i++) {
+    this.data[i + lengthIncrease] = temp[i];
+  }
+  // console.log(this.data);
+  return this.length;
+};
 
 /**
  * Add item to the end of the list
@@ -30,8 +55,8 @@ List.prototype.push = function(item) {
  * @returns {*}
  */
 List.prototype.pop = function() {
-  let returnValue = this.data[this.length];
-  delete this.data[this.length];
+  let returnValue = this.data[this.length - 1];
+  delete this.data[this.length - 1];
   this.length--;
   return returnValue;
 };
