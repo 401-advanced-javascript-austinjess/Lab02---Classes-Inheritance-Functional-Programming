@@ -49,6 +49,12 @@ describe('List Data Structure', () => {
     expect(stuff.unshift('z', 'x', 'y')).toBe(stuff.length);
   });
 
+  // it('has forEach method that loops through data list', () => {
+  //   let stuff = new List();
+  //   stuff.unshift('a', 'b', 'c');
+  //   expect(stuff.forEach)
+  // });
+
   // it('items can be added to the beginning of the array', () => {
   //   let stuff = new List();
   //   stuff.push('a');
