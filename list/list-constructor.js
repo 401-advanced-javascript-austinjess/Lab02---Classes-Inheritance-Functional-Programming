@@ -22,13 +22,11 @@ List.prototype.shift = function() {
 
 List.prototype.unshift = function() {
   const startingLength = this.length;
-  console.log(startingLength);
   const lengthIncrease = arguments.length;
   let temp = {};
   for (let i = 0; i < startingLength; i++) {
     temp[i] = this.data[i];
   }
-  console.log(temp);
   for (let i = 0; i < lengthIncrease; i++) {
     this.data[i] = arguments[i];
     this.length++;
@@ -36,7 +34,6 @@ List.prototype.unshift = function() {
   for (let i = 0; i < startingLength + lengthIncrease; i++) {
     this.data[i + lengthIncrease] = temp[i];
   }
-  // console.log(this.data);
   return this.length;
 };
 
